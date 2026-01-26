@@ -56,7 +56,7 @@ let projects = [
     title: "Car Rental Website",
     description:
       "A comprehensive car rental web application built with React, allowing users to browse, book, and manage car rentals with ease.",
-    source: "/imgs/projects/car-rentals.webp",
+    source: "/imgs/projects/_car-rentals.webp",
     stack: "React",
     liveProject: "https://car-rental-react-js.vercel.app",
     githubResp: "https://github.com/abdellahak/CarRental-ReactJS",
@@ -150,7 +150,8 @@ function showProject(id) {
           </div>
           <div class="img-infos">
             <div class="prj-infos">
-              <div class="img-btns">
+            
+            <div class="img-btns">
                 ${
                   targetedProject.liveProject
                     ? `<a href="${targetedProject.liveProject}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live project</a>`
