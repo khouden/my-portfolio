@@ -47,150 +47,216 @@ skillCard.forEach((card) => {
 
 // work section for the slider
 
-let projectsContainer = document.querySelector(".project-image");
-let projectsNav = document.querySelector(".projects-nav");
+// Technology icons mapping
+const techIcons = {
+  "React": "fa-brands fa-react",
+  "Laravel": "fa-brands fa-laravel",
+  "Blade": "fa-solid fa-leaf",
+  "HTML5": "fa-brands fa-html5",
+  "CSS3": "fa-brands fa-css3-alt",
+  "JavaScript": "fa-brands fa-js",
+  "Python": "fa-brands fa-python",
+  "PHP": "fa-brands fa-php",
+  "Node.js": "fa-brands fa-node-js",
+  "Vue": "fa-brands fa-vuejs",
+  "Bootstrap": "fa-brands fa-bootstrap",
+  "Sass": "fa-brands fa-sass",
+  "Git": "fa-brands fa-git-alt",
+  "GitHub": "fa-brands fa-github"
+};
 
 let projects = [
   {
     id: 1,
     title: "Car Rental Website",
-    description:
-      "A comprehensive car rental web application built with React, allowing users to browse, book, and manage car rentals with ease.",
+    description: "A comprehensive car rental web application built with React, allowing users to browse, book, and manage car rentals with ease. Features include vehicle filtering, booking management, and responsive design.",
     source: "/imgs/projects/_car-rentals.webp",
-    stack: "React",
+    stack: ["React", "CSS3", "JavaScript"],
     liveProject: "https://car-rental-react-js.vercel.app",
     githubResp: "https://github.com/abdellahak/CarRental-ReactJS",
   },
   {
     id: 2,
     title: "E-commerce Website",
-    description:
-      "A fully-featured e-commerce website built with Laravel and Blade, offering a seamless shopping experience with product listings, user authentication, and a secure checkout process.",
+    description: "A fully-featured e-commerce website built with Laravel and Blade, offering a seamless shopping experience with product listings, user authentication, and a secure checkout process.",
     source: "/imgs/projects/e-commerce website.webp",
-    stack: "Laravel, Blade",
+    stack: ["Laravel", "Blade", "PHP", "CSS3"],
     liveProject: null,
     githubResp: "https://github.com/abdellahak/_e-commerce-laravel",
   },
   {
     id: 3,
     title: "E-Shopping Cart",
-    description:
-      "An interactive online shopping cart built with HTML, CSS, and JavaScript, featuring dynamic product listings and a responsive checkout process.",
+    description: "An interactive online shopping cart built with HTML, CSS, and JavaScript, featuring dynamic product listings and a responsive checkout process.",
     source: "/imgs/projects/eshoping cart project.webp",
-    stack: "HTML5, CSS3, JavaScript",
+    stack: ["HTML5", "CSS3", "JavaScript"],
     liveProject: "https://abdellahak.github.io/eshoping-Cart/",
     githubResp: "https://github.com/abdellahak/eshoping-Cart",
   },
   {
     id: 4,
     title: "Instagram Clone",
-    description:
-      "A responsive front-end clone of Instagram, showcasing photo and video feeds, and user profiles.",
+    description: "A responsive front-end clone of Instagram, showcasing photo and video feeds, and user profiles with pixel-perfect design accuracy.",
     source: "imgs/projects/instagram-clone.webp",
-    stack: "HTML5, CSS3",
+    stack: ["HTML5", "CSS3"],
     liveProject: "https://abdellahak.github.io/instagram-clone/",
     githubResp: "https://github.com/abdellahak/instagram-clone/",
   },
   {
     id: 5,
     title: "Arabic Website",
-    description:
-      "A landing page for an Arabic website, built with HTML, CSS, and JavaScript.",
+    description: "A landing page for an Arabic website, built with HTML, CSS, and JavaScript featuring RTL layout and cultural design elements.",
     source: "/imgs/projects/arabic-website.webp",
-    stack: "HTML5, CSS3",
+    stack: ["HTML5", "CSS3", "JavaScript"],
     liveProject: "https://abdellahak.github.io/arabicwebsite/",
     githubResp: "https://github.com/abdellahak/arabicwebsite",
   },
   {
     id: 6,
     title: "Library Book Loan",
-    description:
-      "A Python and Tkinter application for managing book loans and maintaining a catalog of available books.",
+    description: "A Python and Tkinter application for managing book loans and maintaining a catalog of available books with an intuitive desktop interface.",
     source: "/imgs/projects/library project.webp",
-    stack: "Python",
+    stack: ["Python"],
     liveProject: null,
     githubResp: "https://github.com/abdellahak/projet-bibliotheque",
   },
 ];
 
-let projectsNavigationHtml = projects
-  .map(
-    (prj) => `
-        <button class="project-card" id="card-${prj.id}" onclick = "changeProject(${prj.id})">
-            <div class="card-bg"></div>
-            <img src="${prj.source}" alt="${prj.title}" class="prj-icon" loading="lazy">
-            <div>
-                <h1>${prj.title}</h1>
-            </div>
-        </button>
-                `
-  )
-  .join("");
-projectsNav.innerHTML = projectsNavigationHtml;
+// DOM Elements
+const projectPreview = document.querySelector(".project-preview");
+const projectTitle = document.querySelector(".project-title");
+const projectDescription = document.querySelector(".project-description");
+const techStack = document.querySelector(".tech-stack");
+const projectActions = document.querySelector(".project-actions");
+const thumbnailStrip = document.querySelector(".thumbnail-strip");
+const currentNum = document.querySelector(".current-num");
+const totalNum = document.querySelector(".total-num");
+const prevBtn = document.querySelector(".nav-prev");
+const nextBtn = document.querySelector(".nav-next");
 
-let projectsCards = document.querySelectorAll(".project-card");
-function changeNavColor(id) {
-  let targetedCard = document.getElementById(`card-${id}`);
-  projectsCards.forEach((card) => {
-    card.classList.remove("selected-card");
-  });
-  targetedCard.classList.add("selected-card");
-}
-let globalid = 0;
-function showProject(id) {
-  let targetedProject = projects.find((prj) => prj.id == id);
-  projectsContainer.innerHTML = `
-        <div class="image-container">
-            <img
-            src="${targetedProject.source}"
-            alt="${targetedProject.title}"
-            class="prj-img"
-            loading="lazy"
-          />
-          </div>
-          <div class="img-infos">
-            <div class="prj-infos">
-            
-            <div class="img-btns">
-                ${
-                  targetedProject.liveProject
-                    ? `<a href="${targetedProject.liveProject}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live project</a>`
-                    : ""
-                }
-                ${
-                  targetedProject.githubResp
-                    ? `<a href="${targetedProject.githubResp}" target="_blank">
-                  <i class="fa-brands fa-github"></i>
-                  Github respository
-                </a>`
-                    : ""
-                }
-              </div>
-              <h1>${targetedProject.title}</h1>
-            </div>
-          </div>
-        `;
-}
-function sliderMovement(id = globalid) {
-  globalid++;
-  if (globalid > projects.length) {
-    globalid = 1;
-  }
-  showProject(globalid);
-  changeNavColor(globalid);
-}
+let currentIndex = 0;
 let sliderInterval;
 
-function changeProject(id) {
-  if (sliderInterval) {
-    clearInterval(sliderInterval);
-  }
-  globalid = id - 1;
-  sliderMovement(globalid - 1);
-  sliderInterval = setInterval(sliderMovement, 8000);
+// Set total number
+totalNum.textContent = String(projects.length).padStart(2, '0');
+
+// Generate thumbnails
+function generateThumbnails() {
+  thumbnailStrip.innerHTML = projects.map((prj, index) => `
+    <button class="thumbnail ${index === 0 ? 'active' : ''}" data-index="${index}">
+      <img src="${prj.source}" alt="${prj.title}" loading="lazy">
+      <div class="thumbnail-overlay"></div>
+    </button>
+  `).join("");
+
+  // Add click listeners
+  document.querySelectorAll(".thumbnail").forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      goToProject(parseInt(thumb.dataset.index));
+    });
+  });
 }
 
-changeProject(1);
+// Update active thumbnail
+function updateThumbnails(index) {
+  document.querySelectorAll(".thumbnail").forEach((thumb, i) => {
+    thumb.classList.toggle("active", i === index);
+  });
+}
+
+// Render project
+function renderProject(index) {
+  const project = projects[index];
+
+  // Add animation class
+  projectPreview.classList.add("animating");
+
+  // Update preview image
+  projectPreview.innerHTML = `
+    <img src="${project.source}" alt="${project.title}" class="preview-img">
+    <div class="preview-overlay"></div>
+  `;
+
+  // Update title with animation
+  projectTitle.textContent = project.title;
+
+  // Update description
+  projectDescription.textContent = project.description;
+
+  // Update tech stack with icons
+  techStack.innerHTML = project.stack.map(tech => `
+    <span class="tech-badge">
+      <i class="${techIcons[tech] || 'fa-solid fa-code'}"></i>
+      ${tech}
+    </span>
+  `).join("");
+
+  // Update action buttons
+  projectActions.innerHTML = `
+    ${project.liveProject ? `
+      <a href="${project.liveProject}" target="_blank" class="action-btn primary">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <span>Live Demo</span>
+      </a>
+    ` : ''}
+    ${project.githubResp ? `
+      <a href="${project.githubResp}" target="_blank" class="action-btn secondary">
+        <i class="fa-brands fa-github"></i>
+        <span>Source Code</span>
+      </a>
+    ` : ''}
+  `;
+
+  // Update counter
+  currentNum.textContent = String(index + 1).padStart(2, '0');
+
+  // Update thumbnails
+  updateThumbnails(index);
+
+  // Remove animation class
+  setTimeout(() => {
+    projectPreview.classList.remove("animating");
+  }, 500);
+}
+
+// Navigation functions
+function goToProject(index) {
+  currentIndex = index;
+  renderProject(currentIndex);
+  resetInterval();
+}
+
+function goToPrev() {
+  currentIndex = currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
+  renderProject(currentIndex);
+  resetInterval();
+}
+
+function goToNext() {
+  currentIndex = currentIndex === projects.length - 1 ? 0 : currentIndex + 1;
+  renderProject(currentIndex);
+  resetInterval();
+}
+
+function resetInterval() {
+  clearInterval(sliderInterval);
+  sliderInterval = setInterval(goToNext, 8000);
+}
+
+// Event listeners
+prevBtn.addEventListener("click", goToPrev);
+nextBtn.addEventListener("click", goToNext);
+
+// Keyboard navigation
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft") goToPrev();
+  if (e.key === "ArrowRight") goToNext();
+});
+
+// Initialize
+generateThumbnails();
+renderProject(0);
+sliderInterval = setInterval(goToNext, 8000);
 
 // for contact section
 let inputs = document.querySelectorAll(".forminput");
@@ -210,9 +276,8 @@ function moveOnFocus() {
   let label = this.previousElementSibling;
   if (this.value.length == 0) {
     for (let i = 0; i < label.children.length; i++) {
-      label.children[i].style.transition = `transform 0.2s ease ${
-        i / 10
-      }s, color 0.2s linear`;
+      label.children[i].style.transition = `transform 0.2s ease ${i / 10
+        }s, color 0.2s linear`;
       label.children[i].style.transform = "translateY(0px)";
       label.children[i].classList.toggle("labelstyle");
     }
@@ -339,10 +404,10 @@ let cards = document.querySelectorAll(".card");
 
 function changeAnimation() {
   if (window.innerWidth < 640) {
-      aboutCards.classList.remove("block");
-      cards.forEach((card) => {
-        card.classList.add("block");
-      });
+    aboutCards.classList.remove("block");
+    cards.forEach((card) => {
+      card.classList.add("block");
+    });
   } else {
     aboutCards.classList.add("block");
     cards.forEach((card) => {
@@ -357,13 +422,13 @@ function changeAnimation() {
 let projectsNavigation = document.querySelector(".projects-nav");
 let projectsCards2 = document.querySelectorAll(".project-card");
 
-function changeAnimation2(){
-  if(window.innerWidth < 1000){
+function changeAnimation2() {
+  if (window.innerWidth < 1000) {
     projectsNavigation.classList.remove("block2");
     projectsCards2.forEach((card) => {
       card.classList.add("block2");
     });
-  }else{
+  } else {
     projectsNavigation.classList.add("block2");
     projectsCards2.forEach((card) => {
       card.classList.remove("block2");
