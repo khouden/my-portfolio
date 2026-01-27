@@ -291,11 +291,14 @@ a[class="selectedopt"] {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .about-container {
   max-width: 1100px;
+  max-width: min(1100px, 100%);
   width: 100%;
+  overflow: hidden;
 }
 
 /* Header */
@@ -743,6 +746,142 @@ a[class="selectedopt"] {
 .hobby-tag i {
   color: var(--accent);
   font-size: 0.8rem;
+}
+
+/* Responsive - Mobile (max-width: 639px) */
+@media (max-width: 639px) {
+  .about-section {
+    padding: 2rem 0.75rem;
+  }
+
+  .about-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .about-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+
+  .about-content {
+    gap: 1rem;
+  }
+
+  .about-intro-card {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .intro-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .intro-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .intro-content p {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-stats {
+    gap: 0.5rem;
+  }
+
+  .stat-item {
+    padding: 0.75rem 0.25rem;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.5px;
+  }
+
+  .about-tabs-wrapper {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .about-tabs {
+    gap: 0.25rem;
+    padding: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-tab {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.75rem;
+    gap: 4px;
+  }
+
+  .about-tab i {
+    font-size: 0.8rem;
+  }
+
+  .about-tab-content {
+    min-height: 250px;
+  }
+
+  .skill-category {
+    padding: 0.75rem;
+  }
+
+  .category-header {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-pill {
+    padding: 4px 10px;
+    font-size: 0.65rem;
+  }
+
+  .timeline-content {
+    padding: 0.75rem;
+  }
+
+  .timeline-content h4 {
+    font-size: 0.8rem;
+  }
+
+  .personal-item {
+    padding: 0.75rem;
+    gap: 10px;
+  }
+
+  .personal-item>i {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .personal-value {
+    font-size: 0.8rem;
+  }
+
+  .lang-tag,
+  .hobby-tag {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+  }
 }
 
 /* Responsive - Tablet */
