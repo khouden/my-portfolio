@@ -63,12 +63,21 @@ const techIcons = {
   "Bootstrap": "fa-brands fa-bootstrap",
   "Sass": "fa-brands fa-sass",
   "Git": "fa-brands fa-git-alt",
-  "GitHub": "fa-brands fa-github"
+  "GitHub": "fa-brands fa-github",
 };
 
 let projects = [
   {
     id: 1,
+    title: "School management",
+    description: "A school management system built with Laravel and React, offering a responsive and user-friendly interface for managing absences.",
+    source: "/imgs/projects/school management.webp",
+    stack: ["Laravel", "React"],
+    liveProject: null,
+    githubResp: "https://github.com/khouden/gestion_absences.git",
+  },
+  {
+    id: 2,
     title: "Car Rental Website",
     description: "A comprehensive car rental web application built with React, allowing users to browse, book, and manage car rentals with ease. Features include vehicle filtering, booking management, and responsive design.",
     source: "/imgs/projects/_car-rentals.webp",
@@ -77,7 +86,7 @@ let projects = [
     githubResp: "https://github.com/khouden/CarRental-ReactJS",
   },
   {
-    id: 2,
+    id: 3,
     title: "E-commerce Website",
     description: "A fully-featured e-commerce website built with Laravel and Blade, offering a seamless shopping experience with product listings, user authentication, and a secure checkout process.",
     source: "/imgs/projects/e-commerce website.webp",
@@ -86,7 +95,16 @@ let projects = [
     githubResp: "https://github.com/khouden/_e-commerce-laravel",
   },
   {
-    id: 3,
+    id: 4,
+    title : "AI Platform for Translation and Summarization",
+    description : "An AI platform for translation and summarization built with React and FastApi, offering a user-friendly interface for processing text and generating summaries.",
+    source : "/imgs/projects/ai plateform.webp",
+    stack : ["React", "FastApi"],
+    liveProject : "https://www.3ssila-ai.tech/",
+    githubResp : "https://www.3ssila-ai.tech/",
+  },
+  {
+    id: 5,
     title: "E-Shopping Cart",
     description: "An interactive online shopping cart built with HTML, CSS, and JavaScript, featuring dynamic product listings and a responsive checkout process.",
     source: "/imgs/projects/eshoping cart project.webp",
@@ -95,7 +113,7 @@ let projects = [
     githubResp: "https://github.com/khouden/eshoping-Cart",
   },
   {
-    id: 4,
+    id: 6,
     title: "Instagram Clone",
     description: "A responsive front-end clone of Instagram, showcasing photo and video feeds, and user profiles with pixel-perfect design accuracy.",
     source: "imgs/projects/instagram-clone.webp",
@@ -104,7 +122,7 @@ let projects = [
     githubResp: "https://github.com/khouden/instagram-clone/",
   },
   {
-    id: 5,
+    id: 7,
     title: "Arabic Website",
     description: "A landing page for an Arabic website, built with HTML, CSS, and JavaScript featuring RTL layout and cultural design elements.",
     source: "/imgs/projects/arabic-website.webp",
@@ -113,7 +131,7 @@ let projects = [
     githubResp: "https://github.com/khouden/arabicwebsite",
   },
   {
-    id: 6,
+    id: 8,
     title: "Library Book Loan",
     description: "A Python and Tkinter application for managing book loans and maintaining a catalog of available books with an intuitive desktop interface.",
     source: "/imgs/projects/library project.webp",
