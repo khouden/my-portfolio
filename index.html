@@ -95,129 +95,237 @@
   </header>
 
   <!-- about section -->
-  <section class="about-me" id="about">
-    <h5 class="block">Get to Know Me</h5>
-    <h1 class="block">About Me</h1>
-    <div class="spliteddiv">
-      <div class="options-about block">
-        <li>I’m a Full Stack Developer with expertise in crafting both the front-end and back-end of web applications.
-        </li>
-        <button class="option-btn selected-option block" id="education">Education</button>
-        <button class="option-btn block" id="skills">Skills</button>
-        <button class="option-btn block" id="aboutMe">About me</button>
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <!-- Section Header -->
+      <div class="about-header">
+        <span class="about-subtitle">Get to Know Me</span>
+        <h2 class="about-title">About <span class="text-accent">Me</span></h2>
       </div>
 
-      <!-- education page -->
-      <div class="result-about" id="education-page">
-        <h1 class="option-title block">Education :</h1>
-        <div class="cards-about block">
-          <div class="card">
-            <h4>2023 - now</h4>
-            <h2>Full Stack development</h2>
-            <h5><span class="circle">●</span> OFPPT Institute</h5>
-          </div>
-          <div class="card">
-            <h4>2020 - 2023</h4>
-            <h2>Computer Science Development Diploma</h2>
-            <h5><span class="circle">●</span> OFPPT Institute</h5>
-          </div>
-          <div class="card">
-            <h4>2019 - 2020</h4>
-            <h2>Earth and Universe Sciences</h2>
-            <h5><span class="circle">●</span> IBN ZOHR University</h5>
-          </div>
-          <div class="card">
-            <h4>2018 - 2019</h4>
-            <h2>scientific baccalaureate</h2>
-            <h5><span class="circle">●</span> Assafa high school</h5>
-          </div>
-        </div>
-      </div>
-      <!-- skills page -->
-      <div class="result-about" id="skills-page">
-        <h1 class="option-title block">Skills :</h1>
-        <div class="skills-cards">
-          <div class="skill block">
-            <div class="skill-title">Html</div>
-            <i class="fa-brands fa-html5"></i>
-          </div>
-          <div class="skill block">
-            <div class="skill-title">CSS</div>
-            <i class="fa-brands fa-css3"></i>
-          </div>
-          <div class="skill block">
-            <div class="skill-title">Javascript</div>
-            <i class="fa-brands fa-js"></i>
-          </div>
-          <div class="skill block">
-            <div class="skill-title">React</div>
-            <i class="fa-brands fa-react"></i>
-          </div>
-          <div class="skill block">
-            <div class="skill-title">Bootstrap</div>
-            <i class="fa-brands fa-bootstrap"></i>
-          </div>
-          <div class="skill block">
-            <div class="skill-title">Python</div>
-            <i class="fa-brands fa-python"></i>
-          </div>
-          <div class="skill block">
-            <div class="skill-title">PHP</div>
-            <i class="fa-brands fa-php"></i>
-          </div>
-          <div class="skill block">
-            <div class="skill-title">Laravel</div>
-            <i class="fa-brands fa-laravel"></i>
-          </div>
-          <div class="skill block">
-            <div class="skill-title">MySql</div>
-            <img src="imgs/sakila.png" class="skill-logo" loading="lazy">
-          </div>
-          <div class="skill block">
-            <div class="skill-title">GIT</div>
-            <i class="fa-brands fa-git"></i>
-          </div>
-          <div class="skill block">
-            <div class="skill-title">Figma</div>
-            <i class="fa-brands fa-figma"></i>
+      <!-- Main Content Grid -->
+      <div class="about-content">
+        <!-- Left Column - Introduction Card -->
+        <div class="about-intro-card">
+          <div class="intro-glow"></div>
+          <div class="intro-content">
+            <div class="intro-icon">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h3>Hello, I'm Abdellah!</h3>
+            <p>A passionate Full Stack Developer crafting both front-end and back-end solutions. I transform ideas into
+              seamless digital experiences.</p>
+            <div class="intro-stats">
+              <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Years Coding</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Technologies</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- about me page -->
-      <div class="result-about" id="aboutMe-page">
-        <h1 class="option-title block">About me :</h1>
-        <div class="informations block">
-          <div class="info-card">
-            <h4>Name :</h4>
-            <h2>Abdellah Khouden</h2>
-          </div>
-          <div class="info-card">
-            <h4>Phone :</h4>
-            <h2>(+212) 680696199</h2>
-          </div>
-          <div class="info-card">
-            <h4>Email :</h4>
-            <h2>khoudenak@gmail.com</h2>
-          </div>
-          <div class="info-card">
-            <h4>Nationality :</h4>
-            <h2>Moroccan</h2>
-          </div>
-          <div class="info-card">
-            <h4>City :</h4>
-            <h2>Agadir</h2>
-          </div>
-          <div class="info-card">
-            <h4>Languages :</h4>
-            <h2>Tamazight, Arabic, French, English.</h2>
-          </div>
-          <div class="info-card">
-            <h4>Hobbies :</h4>
-            <h2>Chess, keyboard typing.</h2>
-          </div>
-        </div>
-      </div>
 
+        <!-- Right Column - Tabbed Content -->
+        <div class="about-tabs-wrapper">
+          <!-- Tab Navigation -->
+          <div class="about-tabs">
+            <button class="about-tab active" data-tab="skills">
+              <i class="fa-solid fa-code"></i>
+              <span>Skills</span>
+            </button>
+            <button class="about-tab" data-tab="education">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Education</span>
+            </button>
+            <button class="about-tab" data-tab="personal">
+              <i class="fa-solid fa-user"></i>
+              <span>Personal</span>
+            </button>
+          </div>
+
+          <!-- Tab Content -->
+          <div class="about-tab-content">
+            <!-- Skills Tab -->
+            <div class="tab-pane active" id="skills-tab">
+              <div class="skills-container">
+                <!-- Systems & Infra -->
+                <div class="skill-category">
+                  <div class="category-header">
+                    <i class="fa-solid fa-server"></i>
+                    <span>Systems & Infra</span>
+                  </div>
+                  <div class="category-skills">
+                    <span class="skill-pill">Linux</span>
+                    <span class="skill-pill">Windows</span>
+                    <span class="skill-pill">Ansible</span>
+                    <span class="skill-pill">OpenStack</span>
+                    <span class="skill-pill">OpenShift</span>
+                    <span class="skill-pill">vSphere</span>
+                  </div>
+                </div>
+
+                <!-- Development -->
+                <div class="skill-category">
+                  <div class="category-header">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Development</span>
+                  </div>
+                  <div class="category-skills">
+                    <span class="skill-pill">HTML</span>
+                    <span class="skill-pill">CSS</span>
+                    <span class="skill-pill">JavaScript</span>
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">PHP</span>
+                    <span class="skill-pill">Java</span>
+                    <span class="skill-pill">SQL</span>
+                    <span class="skill-pill">Bash</span>
+                  </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="skill-category">
+                  <div class="category-header">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Frameworks</span>
+                  </div>
+                  <div class="category-skills">
+                    <span class="skill-pill">ReactJS</span>
+                    <span class="skill-pill">Angular</span>
+                    <span class="skill-pill">Spring Boot</span>
+                  </div>
+                </div>
+
+                <!-- DevOps -->
+                <div class="skill-category">
+                  <div class="category-header">
+                    <i class="fa-solid fa-cubes"></i>
+                    <span>DevOps</span>
+                  </div>
+                  <div class="category-skills">
+                    <span class="skill-pill">Docker</span>
+                    <span class="skill-pill">Kubernetes</span>
+                    <span class="skill-pill">CI/CD</span>
+                  </div>
+                </div>
+
+                <!-- Collaboration -->
+                <div class="skill-category">
+                  <div class="category-header">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Methodologies</span>
+                  </div>
+                  <div class="category-skills">
+                    <span class="skill-pill">Agile</span>
+                    <span class="skill-pill">Scrum</span>
+                    <span class="skill-pill">Jira</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Education Tab -->
+            <div class="tab-pane" id="education-tab">
+              <div class="education-timeline">
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <span class="timeline-date">2023 - Present</span>
+                    <h4>Engineering in Computer Systems & Web Technologies</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> EST</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <span class="timeline-date">2023 - 2025</span>
+                    <h4>Full Stack Development</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> OFPPT Institute</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <span class="timeline-date">2020 - 2023</span>
+                    <h4>Computer Science Development Diploma</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> OFPPT Institute</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <span class="timeline-date">2018 - 2019</span>
+                    <h4>Scientific Baccalaureate</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Assafa High School</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Personal Tab -->
+            <div class="tab-pane" id="personal-tab">
+              <div class="personal-grid">
+                <div class="personal-item">
+                  <i class="fa-solid fa-user"></i>
+                  <div class="personal-info">
+                    <span class="personal-label">Name</span>
+                    <span class="personal-value">Abdellah Khouden</span>
+                  </div>
+                </div>
+                <div class="personal-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <div class="personal-info">
+                    <span class="personal-label">Location</span>
+                    <span class="personal-value">Agadir, Morocco</span>
+                  </div>
+                </div>
+                <div class="personal-item">
+                  <i class="fa-solid fa-envelope"></i>
+                  <div class="personal-info">
+                    <span class="personal-label">Email</span>
+                    <span class="personal-value">khoudenak@gmail.com</span>
+                  </div>
+                </div>
+                <div class="personal-item">
+                  <i class="fa-solid fa-phone"></i>
+                  <div class="personal-info">
+                    <span class="personal-label">Phone</span>
+                    <span class="personal-value">(+212) 680696199</span>
+                  </div>
+                </div>
+                <div class="personal-item full-width">
+                  <i class="fa-solid fa-language"></i>
+                  <div class="personal-info">
+                    <span class="personal-label">Languages</span>
+                    <div class="language-tags">
+                      <span class="lang-tag">Tamazight <small>(Native)</small></span>
+                      <span class="lang-tag">Arabic <small>(Native)</small></span>
+                      <span class="lang-tag">French <small>(B1)</small></span>
+                      <span class="lang-tag">English <small>(B2)</small></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="personal-item full-width">
+                  <i class="fa-solid fa-heart"></i>
+                  <div class="personal-info">
+                    <span class="personal-label">Hobbies</span>
+                    <div class="hobby-tags">
+                      <span class="hobby-tag"><i class="fa-solid fa-chess"></i> Chess</span>
+                      <span class="hobby-tag"><i class="fa-solid fa-keyboard"></i> Keyboard Typing</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <!-- work section  -->

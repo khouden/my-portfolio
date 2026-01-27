@@ -10,21 +10,22 @@ closebtn.forEach((element) => {
   });
 });
 
-// about-options
+// about-options - New Tab System
+const aboutTabs = document.querySelectorAll('.about-tab');
+const tabPanes = document.querySelectorAll('.tab-pane');
 
-let optionsBtn = document.querySelectorAll(".option-btn");
-let resultPages = document.querySelectorAll(".result-about");
-optionsBtn.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    optionsBtn.forEach((b) => {
-      b.classList.remove("selected-option");
-    });
-    btn.classList.add("selected-option");
-    let selectedDiv = document.querySelector(`#${btn.id}-page`);
-    resultPages.forEach((page) => {
-      page.style.display = "none";
-    });
-    selectedDiv.style.display = "block";
+aboutTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Remove active class from all tabs and panes
+    aboutTabs.forEach(t => t.classList.remove('active'));
+    tabPanes.forEach(p => p.classList.remove('active'));
+
+    // Add active class to clicked tab
+    tab.classList.add('active');
+
+    // Show corresponding pane
+    const tabId = tab.dataset.tab + '-tab';
+    document.getElementById(tabId).classList.add('active');
   });
 });
 
@@ -73,7 +74,7 @@ let projects = [
     source: "/imgs/projects/_car-rentals.webp",
     stack: ["React", "CSS3", "JavaScript"],
     liveProject: "https://car-rental-react-js.vercel.app",
-    githubResp: "https://github.com/abdellahak/CarRental-ReactJS",
+    githubResp: "https://github.com/khouden/CarRental-ReactJS",
   },
   {
     id: 2,
@@ -82,7 +83,7 @@ let projects = [
     source: "/imgs/projects/e-commerce website.webp",
     stack: ["Laravel", "Blade", "PHP", "CSS3"],
     liveProject: null,
-    githubResp: "https://github.com/abdellahak/_e-commerce-laravel",
+    githubResp: "https://github.com/khouden/_e-commerce-laravel",
   },
   {
     id: 3,
@@ -90,8 +91,8 @@ let projects = [
     description: "An interactive online shopping cart built with HTML, CSS, and JavaScript, featuring dynamic product listings and a responsive checkout process.",
     source: "/imgs/projects/eshoping cart project.webp",
     stack: ["HTML5", "CSS3", "JavaScript"],
-    liveProject: "https://abdellahak.github.io/eshoping-Cart/",
-    githubResp: "https://github.com/abdellahak/eshoping-Cart",
+    liveProject: "https://khouden.github.io/eshoping-Cart/",
+    githubResp: "https://github.com/khouden/eshoping-Cart",
   },
   {
     id: 4,
@@ -99,8 +100,8 @@ let projects = [
     description: "A responsive front-end clone of Instagram, showcasing photo and video feeds, and user profiles with pixel-perfect design accuracy.",
     source: "imgs/projects/instagram-clone.webp",
     stack: ["HTML5", "CSS3"],
-    liveProject: "https://abdellahak.github.io/instagram-clone/",
-    githubResp: "https://github.com/abdellahak/instagram-clone/",
+    liveProject: "https://khouden.github.io/instagram-clone/",
+    githubResp: "https://github.com/khouden/instagram-clone/",
   },
   {
     id: 5,
@@ -108,8 +109,8 @@ let projects = [
     description: "A landing page for an Arabic website, built with HTML, CSS, and JavaScript featuring RTL layout and cultural design elements.",
     source: "/imgs/projects/arabic-website.webp",
     stack: ["HTML5", "CSS3", "JavaScript"],
-    liveProject: "https://abdellahak.github.io/arabicwebsite/",
-    githubResp: "https://github.com/abdellahak/arabicwebsite",
+    liveProject: "https://khouden.github.io/arabicwebsite/",
+    githubResp: "https://github.com/khouden/arabicwebsite",
   },
   {
     id: 6,
@@ -118,7 +119,7 @@ let projects = [
     source: "/imgs/projects/library project.webp",
     stack: ["Python"],
     liveProject: null,
-    githubResp: "https://github.com/abdellahak/projet-bibliotheque",
+    githubResp: "https://github.com/khouden/projet-bibliotheque",
   },
 ];
 
