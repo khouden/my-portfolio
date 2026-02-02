@@ -80,7 +80,7 @@ let projects = [
     id: 2,
     title: "Car Rental Website",
     description: "A comprehensive car rental web application built with React, allowing users to browse, book, and manage car rentals with ease. Features include vehicle filtering, booking management, and responsive design.",
-    source: "/imgs/projects/_car-rentals.webp",
+    source: "/imgs/projects/car-rentals.webp",
     stack: ["React", "CSS3", "JavaScript"],
     liveProject: "https://car-rental-react-js.vercel.app",
     githubResp: "https://github.com/khouden/CarRental-ReactJS",
@@ -105,6 +105,15 @@ let projects = [
   },
   {
     id: 5,
+    title: "Twist Food - Moroccan Snack Website",
+    description: "A responsive website for Twist Food, a Moroccan snack business, built with React and Tailwind, showcasing their menu and services with a modern design.",
+    source: "/imgs/projects/twistfood.webp",
+    stack: ["React", "Tailwind", "JavaScript"],
+    liveProject: "https://twist-food.vercel.app/",
+    githubResp: null,
+  },
+  {
+    id: 6,
     title: "E-Shopping Cart",
     description: "An interactive online shopping cart built with HTML, CSS, and JavaScript, featuring dynamic product listings and a responsive checkout process.",
     source: "/imgs/projects/eshoping cart project.webp",
@@ -113,7 +122,7 @@ let projects = [
     githubResp: "https://github.com/khouden/eshoping-Cart",
   },
   {
-    id: 6,
+    id: 7,
     title: "Instagram Clone",
     description: "A responsive front-end clone of Instagram, showcasing photo and video feeds, and user profiles with pixel-perfect design accuracy.",
     source: "imgs/projects/instagram-clone.webp",
@@ -122,7 +131,7 @@ let projects = [
     githubResp: "https://github.com/khouden/instagram-clone/",
   },
   {
-    id: 7,
+    id: 8,
     title: "Arabic Website",
     description: "A landing page for an Arabic website, built with HTML, CSS, and JavaScript featuring RTL layout and cultural design elements.",
     source: "/imgs/projects/arabic-website.webp",
@@ -131,7 +140,7 @@ let projects = [
     githubResp: "https://github.com/khouden/arabicwebsite",
   },
   {
-    id: 8,
+    id: 9,
     title: "Library Book Loan",
     description: "A Python and Tkinter application for managing book loans and maintaining a catalog of available books with an intuitive desktop interface.",
     source: "/imgs/projects/library project.webp",
