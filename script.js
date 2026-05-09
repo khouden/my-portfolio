@@ -119,26 +119,6 @@ let projects = [
   },
   {
     id: 6,
-    title: "E-Shopping Cart",
-    description:
-      "An interactive online shopping cart built with HTML, CSS, and JavaScript, featuring dynamic product listings and a responsive checkout process.",
-    source: "/imgs/projects/eshoping cart project.webp",
-    stack: ["HTML5", "CSS3", "JavaScript"],
-    liveProject: "https://khouden.github.io/eshoping-Cart/",
-    githubResp: "https://github.com/khouden/eshoping-Cart",
-  },
-  {
-    id: 7,
-    title: "Instagram Clone",
-    description:
-      "A responsive front-end clone of Instagram, showcasing photo and video feeds, and user profiles with pixel-perfect design accuracy.",
-    source: "imgs/projects/instagram-clone.webp",
-    stack: ["HTML5", "CSS3"],
-    liveProject: "https://khouden.github.io/instagram-clone/",
-    githubResp: "https://github.com/khouden/instagram-clone/",
-  },
-  {
-    id: 8,
     title: "Arabic Website",
     description:
       "A landing page for an Arabic website, built with HTML, CSS, and JavaScript featuring RTL layout and cultural design elements.",
@@ -148,7 +128,7 @@ let projects = [
     githubResp: "https://github.com/khouden/arabicwebsite",
   },
   {
-    id: 9,
+    id: 7,
     title: "Library Book Loan",
     description:
       "A Python and Tkinter application for managing book loans and maintaining a catalog of available books with an intuitive desktop interface.",
