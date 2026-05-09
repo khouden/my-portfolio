@@ -13,7 +13,7 @@ This project is my personal portfolio showcasing my skills, projects, and experi
 
 ## Live Demo
 
-To view the portfolio, visit the [Live Demo](https://abdellahak.github.io/my-portfolio/).
+To view the portfolio, visit the [Live Demo](https://khouden.github.io/my-portfolio/).
 
 ## Built With
 
@@ -26,7 +26,7 @@ To view the portfolio, visit the [Live Demo](https://abdellahak.github.io/my-por
 - **Name**: Abdellah Khouden
 - **Email**: khoudenak@gmail.com
 - **LinkedIn**: [My LinkedIn Profile](https://www.linkedin.com/in/abdellah-khouden/)
-- **GitHub**: [My GitHub Profile](https://github.com/abdellahak)
+- **GitHub**: [My GitHub Profile](https://github.com/khouden)
 
 ## Acknowledgments
 
