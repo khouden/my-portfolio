@@ -429,43 +429,34 @@ form.addEventListener("submit", function (event) {
   }
 });
 
-// animation for elements on small screens
-let aboutCards = document.querySelector(".cards-about");
-let cards = document.querySelectorAll(".card");
+// Scroll animation fallback for browsers without CSS animation-timeline support
+if (
+  typeof CSS === "undefined" ||
+  !CSS.supports ||
+  !CSS.supports("animation-timeline", "view()")
+) {
+  const animatedElements = document.querySelectorAll(
+    ".block, .block2, .block3, .block-right, .block-up"
+  );
 
-function changeAnimation() {
-  if (window.innerWidth < 640) {
-    aboutCards.classList.remove("block");
-    cards.forEach((card) => {
-      card.classList.add("block");
-    });
-  } else {
-    aboutCards.classList.add("block");
-    cards.forEach((card) => {
-      card.classList.remove("block");
-    });
-  }
+  animatedElements.forEach((el) => {
+    el.classList.add("scroll-fallback-init");
+  });
+
+  const scrollObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("scroll-fallback-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -40px 0px",
+    }
+  );
+
+  animatedElements.forEach((el) => scrollObserver.observe(el));
 }
-
-let projectsNavigation = document.querySelector(".projects-nav");
-let projectsCards2 = document.querySelectorAll(".project-card");
-
-function changeAnimation2() {
-  if (window.innerWidth < 1000) {
-    projectsNavigation.classList.remove("block2");
-    projectsCards2.forEach((card) => {
-      card.classList.add("block2");
-    });
-  } else {
-    projectsNavigation.classList.add("block2");
-    projectsCards2.forEach((card) => {
-      card.classList.remove("block2");
-    });
-  }
-}
-
-changeAnimation();
-changeAnimation2();
-
-window.addEventListener("resize", changeAnimation);
-window.addEventListener("resize", changeAnimation2);

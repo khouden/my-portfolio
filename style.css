@@ -291,14 +291,12 @@ a[class="selectedopt"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
 }
 
 .about-container {
   max-width: 1100px;
   max-width: min(1100px, 100%);
   width: 100%;
-  overflow: hidden;
 }
 
 /* Header */
@@ -1595,7 +1593,19 @@ footer {
 @keyframes appear2 {
   0% {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes appearRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
   }
 
   to {
@@ -1607,7 +1617,7 @@ footer {
 @keyframes appear3 {
   0% {
     opacity: 0;
-    scale: 0.5;
+    scale: 0.7;
   }
 
   to {
@@ -1616,22 +1626,69 @@ footer {
   }
 }
 
-.block3 {
-  animation: appear linear;
+@keyframes appearUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.block3,
+.block {
+  animation: appear linear both;
   animation-timeline: view();
-  animation-range: entry 0 cover 30%;
+  animation-range: entry 0% cover 30%;
 }
 
 .block2 {
-  animation: appear2 linear;
+  animation: appear2 linear both;
   animation-timeline: view();
-  animation-range: entry 0 cover 30%;
+  animation-range: entry 0% cover 30%;
 }
 
-.block {
-  animation: appear3 linear;
+.block-right {
+  animation: appearRight linear both;
   animation-timeline: view();
-  animation-range: entry 0 cover 30%;
+  animation-range: entry 0% cover 30%;
+}
+
+.block-up {
+  animation: appearUp linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+/* Fallback for browsers without animation-timeline support */
+.scroll-fallback-init {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-fallback-init.block3,
+.scroll-fallback-init.block {
+  transform: scale(0.85);
+}
+
+.scroll-fallback-init.block2 {
+  transform: translateX(-40px);
+}
+
+.scroll-fallback-init.block-right {
+  transform: translateX(40px);
+}
+
+.scroll-fallback-init.block-up {
+  transform: translateY(40px);
+}
+
+.scroll-fallback-visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
 }
 
 @media screen and (min-width: 1000px) {
