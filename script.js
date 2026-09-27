@@ -60,82 +60,72 @@ const techIcons = {
   PHP: "fa-brands fa-php",
   "Node.js": "fa-brands fa-node-js",
   Vue: "fa-brands fa-vuejs",
+  "Vue.js": "fa-brands fa-vuejs",
   Bootstrap: "fa-brands fa-bootstrap",
   Sass: "fa-brands fa-sass",
   Git: "fa-brands fa-git-alt",
   GitHub: "fa-brands fa-github",
+  MySQL: "fa-solid fa-database",
+  PostgreSQL: "fa-solid fa-database",
+  FastAPI: "fa-solid fa-bolt",
+  Tailwind: "fa-solid fa-wind",
+  "Tailwind CSS": "fa-solid fa-wind",
+  "Azure AI": "fa-solid fa-cloud",
+  "Gemini API": "fa-solid fa-wand-magic-sparkles",
+  Docker: "fa-brands fa-docker",
 };
 
 let projects = [
   {
     id: 1,
-    title: "School management",
+    title: "AI Web Platform",
     description:
-      "A school management system built with Laravel and React, offering a responsive and user-friendly interface for managing absences.",
-    source: "/imgs/projects/gestion_absences.webp",
-    stack: ["Laravel", "React"],
-    liveProject: null,
-    githubResp: "https://github.com/khouden/gestion_absences.git",
+      "All-in-one AI platform integrating translation, text summarization, grammatical correction, YouTube and audio transcription, and OCR. Built with Vue.js, FastAPI, Azure AI, and Gemini API, complete with authentication, file uploads, history, and favorites.",
+    source: "/imgs/projects/ai plateform.webp",
+    stack: ["Vue.js", "FastAPI", "Azure AI", "Gemini API"],
+    liveProject: "https://www.3ssila-ai.tech/",
+    githubResp: null,
   },
   {
     id: 2,
-    title: "Car Rental Website",
+    title: "Impulse Project - Corporate Website",
     description:
-      "A comprehensive car rental web application built with React, allowing users to browse, book, and manage car rentals with ease. Features include vehicle filtering, booking management, and responsive design.",
-    source: "/imgs/projects/car-rentals.webp",
-    stack: ["React", "CSS3", "JavaScript"],
-    liveProject: "https://car-rental-react-js.vercel.app",
-    githubResp: "https://github.com/khouden/CarRental-ReactJS",
+      "Corporate showcase website developed for a French client to exhibit their professional consulting services and enable prospective clients to initiate contact and request quotes. Built with Laravel and Blade, and deployed online.",
+    source: "/imgs/projects/impulse-project.webp",
+    stack: ["Laravel", "Blade", "PHP", "CSS3"],
+    liveProject: "https://www.impulse-project.fr/",
+    githubResp: null,
+    isClientProject: true,
   },
   {
     id: 3,
-    title: "E-commerce Website",
+    title: "Twist Food - Restaurant Website",
     description:
-      "A fully-featured e-commerce website built with Laravel and Blade, offering a seamless shopping experience with product listings, user authentication, and a secure checkout process.",
-    source: "/imgs/projects/e-commerce website.webp",
-    stack: ["Laravel", "Blade", "PHP", "CSS3"],
-    liveProject: null,
-    githubResp: "https://github.com/khouden/_e-commerce-laravel",
-  },
-  {
-    id: 4,
-    title: "AI Platform for Translation and Summarization",
-    description:
-      "An AI platform for translation and summarization built with React and FastApi, offering a user-friendly interface for processing text and generating summaries.",
-    source: "/imgs/projects/ai plateform.webp",
-    stack: ["React", "FastApi"],
-    liveProject: "https://www.3ssila-ai.tech/",
-    githubResp: "https://www.3ssila-ai.tech/",
-  },
-  {
-    id: 5,
-    title: "Twist Food - Moroccan Snack Website",
-    description:
-      "A responsive website for Twist Food, a Moroccan snack business, built with React and Tailwind, showcasing their menu and services with a modern design.",
+      "Showcase website designed and developed for a fast-casual restaurant, featuring interactive menu browsing, venue information, Google Maps integration, and an integrated customer ordering flow via WhatsApp.",
     source: "/imgs/projects/twistfood.webp",
-    stack: ["React", "Tailwind", "JavaScript"],
+    stack: ["React", "Tailwind CSS", "JavaScript"],
     liveProject: "https://twist-food.vercel.app/",
     githubResp: null,
   },
   {
-    id: 6,
-    title: "Arabic Website",
+    id: 4,
+    title: "School Absence Management System",
     description:
-      "A landing page for an Arabic website, built with HTML, CSS, and JavaScript featuring RTL layout and cultural design elements.",
-    source: "/imgs/projects/arabic-website.webp",
-    stack: ["HTML5", "CSS3", "JavaScript"],
-    liveProject: "https://khouden.github.io/arabicwebsite/",
-    githubResp: "https://github.com/khouden/arabicwebsite",
+      "Full-stack web application designed for school attendance and absence tracking by class, with role-based dashboards, RESTful APIs, Laravel Sanctum token authentication, and automated PDF report generation.",
+    source: "/imgs/projects/gestion_absences.webp",
+    stack: ["Laravel", "React", "MySQL"],
+    liveProject: null,
+    githubResp: "https://github.com/khouden/gestion_absences.git",
   },
   {
-    id: 7,
-    title: "Library Book Loan",
+    id: 5,
+    title: "E-Commerce Platform",
     description:
-      "A Python and Tkinter application for managing book loans and maintaining a catalog of available books with an intuitive desktop interface.",
-    source: "/imgs/projects/library project.webp",
-    stack: ["Python"],
+      "Full-featured e-commerce platform featuring product browsing, AJAX-driven shopping cart management, Laravel Breeze authentication, and an administrative dashboard for managing products, categories, and customers.",
+    source: "/imgs/projects/e-commerce website.webp",
+    stack: ["Laravel", "Blade", "PHP", "MySQL"],
     liveProject: null,
-    githubResp: "https://github.com/khouden/projet-bibliotheque",
+    githubResp: "https://github.com/khouden/_e-commerce-laravel",
   },
 ];
 
@@ -234,6 +224,16 @@ function renderProject(index) {
       <a href="${project.githubResp}" target="_blank" class="action-btn secondary">
         <i class="fa-brands fa-github"></i>
         <span>Source Code</span>
+      </a>
+    `
+        : ""
+    }
+    ${
+      !project.liveProject && !project.githubResp
+        ? `
+      <a href="#contact" class="action-btn secondary">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Inquire About Project</span>
       </a>
     `
         : ""
